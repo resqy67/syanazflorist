@@ -27,7 +27,7 @@ class ProductsController extends Controller
 
         if ($request->has('category') && $request->category != '') {
             $query = products::whereHas('category', function ($query) use ($request) {
-                $query->where('id', $request->category);
+                $query->where('slug', $request->category);
             });
         }
 
@@ -56,9 +56,9 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show($slug)
     {
-        $products = products::with('category')->findOrFail($id);
+        $products = products::with('category')->where('slug', $slug)->firstOrFail();
         // dd($products);
         return view('product-detail', compact('products'));
     }

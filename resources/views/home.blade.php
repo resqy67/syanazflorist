@@ -34,7 +34,7 @@
             <!-- Product Card -->
             @foreach ($products as $product)
                 @include('components.product-card', [
-                    'id' => $product->id,
+                    'slug' => $product->slug,
                     'name' => $product->name,
                     'description' => $product->description,
                     'price' => 'Rp. ' . number_format($product->price, 0, ',', '.'),
