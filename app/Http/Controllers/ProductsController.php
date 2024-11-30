@@ -14,7 +14,8 @@ class ProductsController extends Controller
     public function index()
     {
         $products = products::all();
-        return view('home', compact('products'));
+        $categories = categories::all();
+        return view('home', compact('products', 'categories'));
     }
 
     public function products(Request $request)
@@ -59,8 +60,9 @@ class ProductsController extends Controller
     public function show($slug)
     {
         $products = products::with('category')->where('slug', $slug)->firstOrFail();
+        $categories = categories::all();
         // dd($products);
-        return view('product-detail', compact('products'));
+        return view('product-detail', compact('products', 'categories'));
     }
 
     /**

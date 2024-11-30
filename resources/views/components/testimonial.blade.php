@@ -4,17 +4,17 @@
       <div class="flex w-full flex-col">
         <div class="flex items-center justify-between">
           <h5 class="text-xl font-semibold text-slate-800">
-            Tania Andrew
+            {{ $name }}
           </h5>
         </div>
         <p class="text-xs uppercase font-bold text-slate-500 mt-0.5">
-          Designer @ Google
+          {{ $position }}
         </p>
       </div>
     </div>
     <div class="mt-6">
       <p class="text-base text-slate-600 font-light leading-normal">
-        &quot; Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum itaque atque voluptate omnis veritatis voluptatem dolore magni, possimus ea sequi deserunt velit! Quo sint ipsam provident mollitia non asperiores perferendis? &quot;
+        &quot; {{ $description }} &quot;
       </p>
     </div>
   </div>

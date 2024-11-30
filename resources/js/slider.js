@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tambahkan marker
     const marker = L.marker([-1.2523023, 116.8442284]).addTo(map)
-        .bindPopup('<b>Toko Kami</b><br>Balikpapan, Indonesia')
+        .bindPopup('<b>Syanaz Florist</b><br>Jl. D.I Panjaitan, RT.28/RW.no 2, Sumber Rejo, Kec. Balikpapan Tengah, Kota Balikpapan, Kalimantan Timur 76124')
         .openPopup();
     });
 

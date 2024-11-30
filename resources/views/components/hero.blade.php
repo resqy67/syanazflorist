@@ -15,7 +15,7 @@
                 Toko bunga online terpercaya di Balikpapan. Kami menyediakan papan bunga dengan desain custom yang unik
                 dan menarik dengan harga terjangkau, pelayanan ramah, tepat waktu, dan siap melayani 24 jam.
             </p>
-        <a href="#"
+        <a href="/products"
             class="inline-block px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-lg transition">
             Pesan Sekarang
         </a>

@@ -32,7 +32,15 @@
                     <p class="block mb-1 text-base font-semibold text-slate-800">
                         Kategori Produk
                     </p>
-                    <li>
+                    @foreach ($categories as $category )
+                        <li>
+                            <a href="/products?category={{ $category->slug }}"
+                                class="block text-slate-600 py-1 hover:text-slate-500 focus:text-slate-500 text-sm">
+                                {{ $category->name }}
+                            </a>
+                        </li>
+                    @endforeach
+                    {{-- <li>
                         <a href="/products?category=1"
                             class="block text-slate-600 py-1 hover:text-slate-500 focus:text-slate-500 text-sm">
                             Papan Bunga Duka Cita
@@ -55,7 +63,7 @@
                             class="block text-slate-700 py-1 hover:text-slate-500 focus:text-slate-500 text-sm">
                             Papan Bunga Wisuda
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <ul>
                     <p class="block mb-1 text-base font-semibold text-slate-800">
