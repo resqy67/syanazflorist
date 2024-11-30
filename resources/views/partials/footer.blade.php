@@ -59,12 +59,12 @@
                 </ul>
                 <ul>
                     <p class="block mb-1 text-base font-semibold text-slate-800">
-                        Tentang Kami
+                        Toko Kami
                     </p>
                     <li>
                         <a href="#"
                             class="block text-slate-600 py-1 hover:text-slate-500 focus:text-slate-500 text-sm">
-                            Kontak Kami
+                            Jl. D.I Panjaitan, RT.28/RW.no 2, Sumber Rejo, Kec. Balikpapan Tengah, Kota Balikpapan, Kalimantan Timur 76124
                         </a>
                     </li>
                 </ul>

@@ -2,15 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.carousel-item {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    -webkit-transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -ms-transition: opacity 0.5s ease-in-out;
-    -o-transition: opacity 0.5s ease-in-out;
+/* .swiper-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
-.carousel-item.active {
-    opacity: 1;
-}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+} */

@@ -1,4 +1,4 @@
-<div class="p-4 -mt-4">
+<div class="p-4 -my-6">
     <div class="bg-white shadow-sm border rounded-3xl p-6 border-slate-200 hover:shadow-lg transition-shadow duration-300">
         <div class="flex flex-col items-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

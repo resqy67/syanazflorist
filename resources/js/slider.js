@@ -1,36 +1,38 @@
-let currentIndex = 0;
-const items = document.querySelectorAll(".carousel-item");
+document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        autoplay: {
+            delay: 2000, // Waktu jeda dalam milidetik (2 detik)
+            disableOnInteraction: false, // Tetap autoplay meskipun user berinteraksi
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+            },
+        },
 
-function showSlide(index) {
-    items.forEach((item, i) => {
-        item.classList.add('hidden'); // Sembunyikan semua item
-        // item.classList.remove('active'); // Hapus status aktif
-        if (i === index) {
-            // item.classList.remove('hidden'); // Tampilkan item yang sesuai
-            item.classList.add('active'); // Tandai sebagai aktif
-        }
+        // Koordinat awal (contoh Jakarta)
     });
-}
+    const map = L.map('map').setView([-1.2523023, 116.8442284], 13);
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % items.length;
-    showSlide(currentIndex);
-}
+    // Tambahkan tile layer (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
 
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    showSlide(currentIndex);
-}
+    // Tambahkan marker
+    const marker = L.marker([-1.2523023, 116.8442284]).addTo(map)
+        .bindPopup('<b>Toko Kami</b><br>Balikpapan, Indonesia')
+        .openPopup();
+    });
 
-// Jalankan auto-slide setiap 5 detik
-setInterval(() => {
-    // items[currentIndex].classList.remove("active");
+// document.addEventListener('DOMContentLoaded', () => {
 
-    // Pindah ke slide berikutnya setelah 1 detik
-    setTimeout(() => {
-        nextSlide();
-    }, 5000);
-}, 1000);
-
-// Tampilkan slide pertama saat halaman dimuat
-showSlide(currentIndex);
+// });

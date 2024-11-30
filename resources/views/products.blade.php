@@ -44,7 +44,7 @@
                     </div>
                 </form>
             </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto container my-8">
             <!-- Product Card -->
             @if ($products->isEmpty())
             <div class="container mx-auto py-8">

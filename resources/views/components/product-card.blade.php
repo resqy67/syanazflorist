@@ -1,4 +1,4 @@
-<a href="{{ route('products.show', ['id' => $id]) }}" class="cursor-pointer relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-md transition-shadow">
+<a href="{{ route('products.show', ['id' => $id]) }}" class="cursor-pointer relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg w-auto hover:shadow-md transition-shadow">
     <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
         <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="{{ $name }}" class="w-full h-full object-cover" />
     </div>
@@ -8,7 +8,7 @@
                 {{ $name }}
             </h6>
         </div>
-        <p class="text-slate-600 leading-normal font-light">
+        <p class="text-slate-600 leading-normal font-light md:text-center">
             {{ $description }}
         </p>
     </div>
