@@ -16,6 +16,7 @@
     <!-- Styles / Scripts -->
     {{-- @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot'))) --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script async src="node_modules/@material-tailwind/html/scripts/ripple.js"></script>
     {{-- @else --}}
 
     {{-- @endif --}}

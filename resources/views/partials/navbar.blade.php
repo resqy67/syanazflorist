@@ -1,18 +1,18 @@
 <nav
     class="block w-full px-4 py-2 text-white bg-white lg:px-16 lg:py-8">
     <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
-        <a href="#" class="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold">
+        <a href="/" class="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold">
             Syanaz Florist
         </a>
         <div class="hidden lg:block">
             <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
                 <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
-                    <a href="#" class="flex items-center">
+                    <a href="/" class="flex items-center">
                         Beranda
                     </a>
                 </li>
                 <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
-                    <a href="#" class="flex items-center">
+                    <a href="/products" class="flex items-center">
                         Produk
                     </a>
                 </li>
