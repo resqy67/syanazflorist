@@ -8,5 +8,5 @@ Route::get('/products', [ProductsController::class, 'products'])->name('products
 Route::get('/product/{slug}', [ProductsController::class, 'show'])->name('products.show');
 
 // return in filament create page
-Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');
+// Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');
 

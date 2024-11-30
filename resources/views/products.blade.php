@@ -53,6 +53,7 @@
             @else
                 @foreach ($products as $product)
                     @include('components.product-card', [
+                        'image' => $product->image,
                         'slug' => $product->slug,
                         'name' => $product->name,
                         'description' => $product->description,
