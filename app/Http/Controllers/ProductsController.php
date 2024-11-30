@@ -59,10 +59,11 @@ class ProductsController extends Controller
      */
     public function show($slug)
     {
-        $products = products::with('category')->where('slug', $slug)->firstOrFail();
+        $product = products::with('category')->where('slug', $slug)->firstOrFail();
+        $products = products::all();
         $categories = categories::all();
         // dd($products);
-        return view('product-detail', compact('products', 'categories'));
+        return view('product-detail', compact('product', 'categories', 'products'));
     }
 
     /**
