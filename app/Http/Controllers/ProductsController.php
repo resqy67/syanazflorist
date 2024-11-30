@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\products;
 use Illuminate\Http\Request;
 use App\Models\categories;
+use Illuminate\Support\Str;
 
 class ProductsController extends Controller
 {
@@ -44,6 +45,8 @@ class ProductsController extends Controller
     public function create()
     {
         //
+        $categories = categories::all();
+        return view('create', compact('categories'));
     }
 
     /**
@@ -52,6 +55,21 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'slug' => 'required|unique:products,slug',
+            'category_id' => 'required',
+        ]);
+        $slug = Str::slug($request->name);
+        $request->merge(['slug' => $slug]);
+
+        Products::create($request->all());
+
+        return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }
 
     /**
@@ -72,6 +90,8 @@ class ProductsController extends Controller
     public function edit(products $products)
     {
         //
+        $categories = Categories::all();
+        return view('edit', compact('product', 'categories'));
     }
 
     /**

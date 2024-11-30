@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\categories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoriesController extends Controller
 {
@@ -21,7 +22,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -29,7 +30,19 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:categories,slug',
+        ]);
+
+        $slug = Str::slug($request->name);
+        $request->merge(['slug' => $slug]);
+
+        categories::create($request->all());
+
+        // return in filament create page
+        return redirect()->route('categories.index');
     }
 
     /**
