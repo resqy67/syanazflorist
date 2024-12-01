@@ -84,10 +84,10 @@
                         Toko Kami
                     </p>
                     <li>
-                        <a href="#"
+                        <div
                             class="block text-slate-600 py-1 hover:text-slate-500 focus:text-slate-500 text-sm">
                             Jl. D.I Panjaitan, RT.28/RW.no 2, Sumber Rejo, Kec. Balikpapan Tengah, Kota Balikpapan, Kalimantan Timur 76124
-                        </a>
+                        </div>
                     </li>
                 </ul>
             </div>

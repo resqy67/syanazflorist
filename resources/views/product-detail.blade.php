@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    
+
     <div class="container mx-auto px-4 py-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Gambar Produk -->
             <div class="border rounded-lg overflow-hidden">
-                <img src="{{ asset('storage/' . $product->image) }}"
-                    alt="{{ $product->name }}" class="w-full">
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-full">
             </div>
 
             <!-- Detail Produk -->
@@ -24,7 +23,7 @@
                 </p>
 
                 <!-- Tombol Order WhatsApp -->
-                <a href="https://wa.me/62xxxxxxxxxx?text=Halo,%20saya%20ingin%20memesan%20{{ urlencode($product->name) }}"
+                <a href="https://wa.me/6289513688170?text=Halo,%20saya%20ingin%20memesan%20{{ urlencode($product->name) }}"
                     class="bg-green-500 text-white font-semibold py-3 px-6 rounded-lg inline-block shadow hover:bg-green-600">
                     Order Via WhatsApp
                 </a>
@@ -52,19 +51,27 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="mt-8">
-            <h2 class="text-2xl font-semibold">Produk Lainnya</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-24 mt-4"> --}}
-            {{-- <div class="flex flex-row mt-4"> --}}
-                {{-- @foreach ($products as $product)
-                    @include('components.another-product-card', [
-                        'slug' => $product->slug,
-                        'name' => $product->name,
-                        'description' => $product->description,
-                        'price' => 'Rp. ' . number_format($product->price, 0, ',', '.'),
-                    ])
-                @endforeach --}}
-            {{-- </div>
-        </div> --}}
-    </div>
-@endsection
+        <div class="mt-8">
+            <hr class="border-blue-gray-100" />
+            <h2 class="mt-4 text-2xl font-semibold">Produk Lainnya</h2>
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-6xl">
+                @if ($relatedProducts->isEmpty())
+                    <div class="container mx-auto py-8">
+                        <p class="text-center text-2xl text-gray-800">Tidak ada produk yang tersedia.</p>
+                    </div>
+                @else
+                    @foreach ($relatedProducts as $product)
+                        @include('components.product-card', [
+                            'category' => $product->category->name,
+                            'image' => $product->image,
+                            'slug' => $product->slug,
+                            'name' => $product->name,
+                            'description' => $product->description,
+                            'price' => 'Rp. ' . number_format($product->price, 0, ',', '.'),
+                        ])
+                    @endforeach
+                @endif
+                <!-- End Product Card -->
+            </div>
+        </div>
+    @endsection

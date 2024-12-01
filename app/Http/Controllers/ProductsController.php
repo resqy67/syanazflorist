@@ -78,10 +78,13 @@ class ProductsController extends Controller
     public function show($slug)
     {
         $product = products::with('category')->where('slug', $slug)->firstOrFail();
-        $products = products::all();
+        // $products = products::all();
+        $relatedProducts = Products::where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->get();
         $categories = categories::all();
         // dd($products);
-        return view('product-detail', compact('product', 'categories', 'products'));
+        return view('product-detail', compact('product', 'categories', 'relatedProducts'));
     }
 
     /**
