@@ -19,7 +19,7 @@
                     {{ $product->description }}
                 </p>
 
-                <p class="text-sm text-gray-500 mb-6">Untuk jenis bunga ini berukuran {{ $product->size ?? '200 x 135' }}.
+                <p class="text-sm text-gray-500 mb-6">Untuk jenis bunga ini berukuran {{ $product->size ?? '200 x 135cm' }}.
                 </p>
 
                 <!-- Tombol Order WhatsApp -->
