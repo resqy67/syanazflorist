@@ -6,13 +6,13 @@
     <!-- End Hero Section -->
 
     <!-- Feature Card -->
-    <div class="py-12 bg-gray-100">
+    <div class="py-12 bg-gray-100" id="#feature-us">
         <h2 class="text-center text-3xl font-bold mb-2">Mengapa Memilih Kami?</h2>
         <p class="text-center text-gray-600 mb-8 px-4">Kami memberikan pelayanan terbaik untuk Anda.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto container">
             @include('components.feature-card', [
-                'title' => 'Desain Unik',
-                'description' => 'Kami menyediakan desain papan bunga yang unik dan menarik.',
+                'title' => 'Desain Bisa Custom',
+                'description' => 'Kami menyediakan papan bunga dengan desain custom yang unik dan menarik.',
             ])
             @include('components.feature-card', [
                 'title' => 'Harga Terjangkau',
@@ -30,10 +30,11 @@
     <div class="py-12 bg-white">
         <h2 class="text-center text-3xl font-bold mb-2">Produk Kami</h2>
         <p class="text-center text-gray-600 mb-8 px-4">Temukan papan bunga yang sesuai dengan kebutuhan Anda.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto container px-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto container px-4">
             <!-- Product Card -->
             @foreach ($products as $product)
                 @include('components.product-card', [
+                    'category' => $product->category->name,
                     'image' => $product->image,
                     'slug' => $product->slug,
                     'name' => $product->name,
@@ -45,14 +46,14 @@
         </div>
         <div class="flex justify-center">
             <a href="{{ route('products') }}" class=" text-center text-white font-semibold py-2 px-4 border border-transparent rounded-lg inline-block shadow bg-green-400 hover:bg-green-600 transition-colors mt-8">
-                Lihat Semua Produk ->
+                Lihat Semua Produk &rarr;
             </a>
         </div>
     </div>
     <!-- End Product Section -->
 
     <!-- Testimonial Section -->
-    <div class="py-16 bg-gray-100">
+    <div class="py-16 bg-gray-100" id="#testimonial">
         <h2 class="text-center text-3xl font-bold mb-2">Ulasan Pelanggan</h2>
         <p class="text-center text-gray-600 mb-4">Apa kata pelanggan setia tentang produk kami.</p>
         <div class="container mx-auto px-4">
@@ -61,37 +62,42 @@
                     <!-- Testimonial Card -->
                     <div class="swiper-slide">
                         @include('components.testimonial',[
-                            'name' => 'Tania Andrew',
-                            'position' => 'CEO, Company Name',
-                            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                            'name' => 'Rina Pratiwi',
+                            'image' => asset('/person-1.jpg') ,
+                            'position' => 'Pengusaha',
+                            'description' => 'Karangan bunganya sangat cantik dan rapi. Desainnya sesuai permintaan saya, dan warna bunganya benar-benar menyampaikan pesan yang ingin saya sampaikan. Terima kasih atas pelayanannya yang memuaskan!',
                         ])
                     </div>
                     <div class="swiper-slide">
                         @include('components.testimonial', [
-                            'name' => 'John Doe',
-                            'position' => 'CTO, Company Name',
-                            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                            'name' => 'Ahmad Fauzi',
+                            'image' => 'https://plus.unsplash.com/premium_photo-1683639447442-164725904c84?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' ,
+                            'position' => 'Pengusaha',
+                            'description' => 'Karangan bunga papan yang saya pesan untuk acara pernikahan teman saya benar-benar elegan. Detailnya terlihat profesional, dan pesannya sangat jelas terbaca. Teman saya sangat senang.',
                         ])
                     </div>
                     <div class="swiper-slide">
                         @include('components.testimonial', [
-                            'name' => 'Jane Doe',
-                            'position' => 'COO, Company Name',
-                            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                            'name' => 'Siti Nurjanah',
+                            'image' => asset('/person-2.jpg') ,
+                            'position' => 'Pemilik Cafe',
+                            'description' => 'Ini adalah ketiga kalinya saya pesan karangan bunga di sini, dan hasilnya selalu memuaskan. Pengirimannya tepat waktu, dan bunganya selalu tampak segar dan segar. Saya sangat merekomendasikan jasa ini',
                         ])
                     </div>
                     <div class="swiper-slide">
                         @include('components.testimonial', [
-                            'name' => 'Tania Andrew',
-                            'position' => 'CEO, Company Name',
-                            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                            'name' => 'Budi Santoso',
+                            'image' => asset('/person-3.jpg') ,
+                            'position' => 'Karyawan Swasta',
+                            'description' => 'Karangan bunga ucapan selamat yang saya pesan sangat menarik perhatian di acara pembukaan toko teman saya. Kombinasi warnanya sempurna, dan penempatannya sangat presisi. Pelayanan juga sangat cepat.',
                         ])
                     </div>
                     <div class="swiper-slide">
                         @include('components.testimonial', [
-                            'name' => 'John Doe',
-                            'position' => 'CTO, Company Name',
-                            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                            'name' => 'Lisa Mariana',
+                            'image' => asset('/person-4.jpg') ,
+                            'position' => 'Dokter',
+                            'description' => 'Saya memesan karangan bunga untuk perayaan ulang tahun rekan kerja di klinik, dan hasilnya luar biasa! Desainnya elegan, bunganya segar, dan pengirimannya sangat tepat waktu. Semua kolega saya memuji keindahannya. Luar biasa profesional!',
                         ])
                     </div>
                     <!-- Tambahkan lebih banyak jika diperlukan -->
@@ -103,8 +109,8 @@
 
     <!-- Brands Section -->
     <div class="py-12 bg-white">
-        <h2 class="text-center text-3xl font-bold mb-2">Mitra Kami</h2>
-        <p class="text-center text-gray-600 mb-8 px-4">Kami bekerja sama dengan mitra terbaik untuk memberikan pelayanan terbaik.</p>
+        <h2 class="text-center text-3xl font-bold mb-2">Pelanggan yang Telah Percaya kepada Kami</h2>
+        <p class="text-center text-gray-600 mb-8 px-4">Kami bangga telah melayani berbagai pelanggan dari berbagai industri.</p>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto container px-4">
             <!-- Brand Logo -->
             <div class="flex justify-center items-center">
@@ -130,7 +136,6 @@
     <!-- CTA Section -->
     <div class="bg-gray-100">
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            {{-- <img class="w-full rounded-lg shadow-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image"> --}}
             <div id="map" class="w-full h-96 rounded-lg shadow-lg border border-gray-200"></div>
             <div class="mt-4 md:mt-0">
                 <h2 class="text-3xl font-bold">Pesan Bunga Mudah dan Cepat Disini!</h2>

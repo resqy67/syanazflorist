@@ -27,7 +27,7 @@ class ProductsResource extends Resource
             ->schema([
                 // build form
                 Forms\Components\TextInput::make('name')
-                    ->label('Category Name')
+                    ->label('Nama Produk')
                     ->reactive() // Memastikan input memicu reaktivitas
                     ->debounce(500)
                     ->afterStateUpdated(
@@ -37,11 +37,13 @@ class ProductsResource extends Resource
                 Forms\Components\TextInput::make('slug')
                     ->disabled()
                     ->unique(ignoreRecord: true),
-                Forms\Components\TextInput::make('description'),
-                Forms\Components\TextInput::make('price'),
-                Forms\Components\BelongsToSelect::make('category_id')
+                    Forms\Components\Textarea::make('description')->label('Deskripsi singkat Produk'),
+                Forms\Components\TextInput::make('size')->label('Ukuran Produk'),
+                Forms\Components\TextInput::make('price')->label('Harga Produk'),
+                Forms\Components\BelongsToSelect::make('category_id')->label('Kategori Produk')
                     ->relationship('category', 'name'),
-                Forms\Components\FileUpload::make('image'),
+                Forms\Components\FileUpload::make('image')->label('Gambar Produk'),
+
             ]);
     }
 
@@ -50,12 +52,11 @@ class ProductsResource extends Resource
         return $table
             ->columns([
                 // build columns
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('price'),
-                // Tables\Columns\TextColumn::make('category_id')
-                //     ->value(fn($record) => $record->category->name),
-                Tables\Columns\ImageColumn::make('image')
+                Tables\Columns\TextColumn::make('name')->label('Nama Produk'),
+                Tables\Columns\TextColumn::make('description')->label('Deskripsi Produk'),
+                Tables\Columns\TextColumn::make('price')->label('Harga Produk'),
+                Tables\Columns\TextColumn::make('size')->label('Ukuran Produk'),
+                Tables\Columns\ImageColumn::make('image')->label('Gambar Produk'),
             ])
             ->filters([
                 //

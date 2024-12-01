@@ -26,7 +26,7 @@ class CategoriesResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->label('Category Name')
+                    ->label('Nama Kategori')
                     ->required()
                     ->reactive() // Memastikan input memicu reaktivitas
                     ->debounce(500)
@@ -46,7 +46,7 @@ class CategoriesResource extends Resource
         return $table
             ->columns([
                 // build columns
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')->label('Nama Kategori'),
             ])
             ->filters([
                 //

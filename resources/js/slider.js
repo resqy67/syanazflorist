@@ -33,6 +33,24 @@ document.addEventListener('DOMContentLoaded', function () {
         .openPopup();
     });
 
+    // const menuToggle = document.getElementById('menuToggle');
+    // const navMenu = document.getElementById('navMenu');
+
+    // menuToggle.addEventListener('click', () => {
+    //     navMenu.classList.toggle('hidden');
+    // });
+
+    document.getElementById('menuToggle').addEventListener('click', function() {
+        var menuIcon = document.getElementById('menuIcon');
+        var closeIcon = document.getElementById('closeIcon');
+        var navMenu = document.getElementById('navMenu');
+
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        navMenu.classList.toggle('hidden');
+    });
+
+
 // document.addEventListener('DOMContentLoaded', () => {
 
 // });

@@ -1,28 +1,42 @@
 <footer class="relative w-full mb-2 mt-20">
     <div class="w-full px-8 mx-auto max-w-7xl">
         <div class="grid justify-between grid-cols-1 gap-4 md:grid-cols-2">
-            <h5 class="mb-6 text-xl font-semibold text-slate-800">
-                Syanaz Florist
-            </h5>
+            <div class="grid grid-cols-1 gap-4">
+                <diV class="flex items-center" >
+                    <img src="{{ asset('logo.png') }}" alt="Syanaz Florist Logo" class="h-32 w-32">
+                    <div class="flex flex-col">
+                        <h5 class="text-xl font-semibold text-slate-800">
+                            Syanaz Florist
+                        </h5>
+                        <h5 class="text-sm font-thin text-slate-800">
+                            Karangan Bunga Balikpapan
+                        </h5>
+                    </div>
+                </diV>
+                <p class="text-slate-600 mb-4">
+                    Syanaz Florist adalah toko bunga yang berlokasi di Balikpapan, Kalimantan Timur. Kami menyediakan berbagai macam karangan bunga untuk berbagai keperluan.
+                </p>
+            </div>
+                    {{-- <img src="{{ asset('logo.png') }}" alt="Syanaz Florist Logo" class="h-32 w-full"> --}}
             <div class="grid justify-between grid-cols-3 gap-4">
                 <ul>
                     <p class="block mb-1 text-base font-semibold  text-slate-800">
                         Beranda
                     </p>
                     <li>
-                        <a href="#"
+                        <a href="/products"
                             class="block text-slate-600 py-1 hover:text-slate-500 focus:text-slate-500 text-sm">
                             Produk
                         </a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="#feature-us"
                             class="block text-slate-600 py-1 hover:text-slate-500 focus:text-slate-500 text-sm">
                             Fitur Kami
                         </a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="#testimonial"
                             class="block text-slate-600 py-1 hover:text-slate-500 focus:text-slate-500 text-sm">
                             Testimoni
                         </a>

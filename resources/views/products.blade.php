@@ -4,11 +4,11 @@
     <!-- Product Section -->
     <div class="bg-white">
         <div class="md:px-32 p-4 bg-green-400">
-            <h2 class="text-white mt-2 text-3xl font-bold ">Produk Kami</h2>
+            <h2 class="text-white mt-2 text-3xl font-bold container mx-auto">Produk Kami</h2>
         </div>
             {{-- buatkan filter produk --}}
-            <div class="md:px-32 p-4 bg-green-400">
-                <form action="{{ route('products') }}" method="GET">
+            <div class="p-4 bg-green-400">
+                <form action="{{ route('products') }}" method="GET" class="container mx-auto">
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="category">
@@ -44,7 +44,7 @@
                     </div>
                 </form>
             </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto container my-8 p-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-6xl mx-auto container my-8 p-4">
             <!-- Product Card -->
             @if ($products->isEmpty())
             <div class="container mx-auto py-8">
@@ -53,6 +53,7 @@
             @else
                 @foreach ($products as $product)
                     @include('components.product-card', [
+                        'category' => $product->category->name,
                         'image' => $product->image,
                         'slug' => $product->slug,
                         'name' => $product->name,
