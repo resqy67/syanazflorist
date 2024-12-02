@@ -34,7 +34,7 @@
         <p class="text-center text-gray-600 mb-8 px-4">Temukan papan bunga yang sesuai dengan kebutuhan Anda.</p>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto container px-4">
             <!-- Product Card -->
-            @foreach ($products as $product)
+            @foreach ($Products as $product)
             <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                 @include('components.product-card', [
                     'category' => $product->category->name,

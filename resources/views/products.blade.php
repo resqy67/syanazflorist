@@ -18,7 +18,7 @@
                                 <select name="category" id="category"
                                     class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                     <option value="">Semua Kategori</option>
-                                    @foreach ($categories as $category)
+                                    @foreach ($Categories as $category)
                                         <option value="{{ $category->slug }}"
                                             {{ request()->get('category') == $category->slug ? 'selected' : ''}}>
                                             {{ $category->name }}
@@ -46,12 +46,12 @@
             </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-6xl mx-auto container my-8 p-4">
             <!-- Product Card -->
-            @if ($products->isEmpty())
+            @if ($Products->isEmpty())
             <div class="container mx-auto py-8">
                 <p class="text-center text-2xl text-gray-800">Tidak ada produk yang tersedia.</p>
             </div>
             @else
-                @foreach ($products as $product)
+                @foreach ($Products as $product)
                 <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                     @include('components.product-card', [
                         'category' => $product->category->name,
