@@ -23,6 +23,8 @@
     <!-- Styles / Scripts -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     {{-- @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot'))) --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- <script async src="node_modules/@material-tailwind/html/scripts/ripple.js"></script> --}}

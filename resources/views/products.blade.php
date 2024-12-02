@@ -52,6 +52,7 @@
             </div>
             @else
                 @foreach ($products as $product)
+                <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                     @include('components.product-card', [
                         'category' => $product->category->name,
                         'image' => $product->image,
@@ -59,7 +60,8 @@
                         'name' => $product->name,
                         'description' => $product->description,
                         'price' => 'Rp. ' . number_format($product->price, 0, ',', '.'),
-                    ])
+                        ])
+                        </div>
                 @endforeach
             @endif
             <!-- End Product Card -->
