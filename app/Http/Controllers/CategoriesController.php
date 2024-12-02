@@ -13,7 +13,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = categories::all();
+        $categories = Categories::all();
         return view('home', compact('categories'));
     }
 
@@ -39,7 +39,7 @@ class CategoriesController extends Controller
         $slug = Str::slug($request->name);
         $request->merge(['slug' => $slug]);
 
-        categories::create($request->all());
+        Categories::create($request->all());
 
         // return in filament create page
         return redirect()->route('categories.index');

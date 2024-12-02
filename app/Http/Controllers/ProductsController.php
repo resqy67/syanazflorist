@@ -14,8 +14,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = products::latest()->take(4)->get();
-        $categories = categories::all();
+        $products = Products::latest()->take(4)->get();
+        $categories = Categories::all();
         return view('home', compact('products', 'categories'));
     }
 
@@ -34,7 +34,7 @@ class ProductsController extends Controller
         }
 
         $products = $query->get();
-        $categories = categories::all();
+        $categories = Categories::all();
 
         return view('products', compact('products', 'categories'));
     }
@@ -77,12 +77,12 @@ class ProductsController extends Controller
      */
     public function show($slug)
     {
-        $product = products::with('category')->where('slug', $slug)->firstOrFail();
+        $product = Products::with('category')->where('slug', $slug)->firstOrFail();
         // $products = products::all();
         $relatedProducts = Products::where('category_id', $product->category_id)
             ->where('id', '!=', $product->id)
             ->get();
-        $categories = categories::all();
+        $categories = Categories::all();
         // dd($products);
         return view('product-detail', compact('product', 'categories', 'relatedProducts'));
     }
