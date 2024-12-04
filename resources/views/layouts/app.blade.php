@@ -25,16 +25,16 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('build/assets/app-SqahoYgH.css') }}">
-    <script src="{{ asset('build/assets/app-quTRjBfW.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('resources/css/app.css') }}">
+    <script src="{{ asset('resources/js/app.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    {{-- @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot'))) --}}
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- <script async src="node_modules/@material-tailwind/html/scripts/ripple.js"></script> --}}
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --}}
-    {{-- @else --}}
+    @else
 
-    {{-- @endif --}}
+    @endif
 </head>
 
 <body>
