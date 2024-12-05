@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
-use App\Models\categories;
+use App\Models\Categories;
 use Illuminate\Support\Str;
 
 class ProductsController extends Controller
